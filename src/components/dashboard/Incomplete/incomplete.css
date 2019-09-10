@@ -1,0 +1,22 @@
+.add-check-circle::after {
+  font-family: 'FontAwesome';
+  content: '\f058';
+  font-weight: 900;
+  position: absolute;
+  left: 1.3rem;
+  bottom: 1rem;
+}
+
+.add-cross-circle::after {
+  font-family: 'FontAwesome';
+  content: '\f057';
+  font-weight: 900;
+  position: absolute;
+  left: 1.3rem;
+  bottom: 1rem;
+}
+
+.rounded-box {
+  border: 0.5px solid black;
+  border-radius: 50%;
+}

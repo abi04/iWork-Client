@@ -24,7 +24,8 @@ class SelectedRecipients extends React.PureComponent {
                 return (
                   <div className="tags has-addons">
                     <span className="tag is-info">
-                      {user.firstName} {user.lastName}
+                      {user.firstName}
+                      {user.lastName}
                     </span>
                     <span className="tag is-delete" onClick={toggleRecipientListMutation} />
                   </div>
@@ -34,6 +35,12 @@ class SelectedRecipients extends React.PureComponent {
           </div>
         );
       }
+      return (
+        <div className="tags has-addons">
+          <span className="tag is-info">Not available</span>
+          <span className="tag is-delete" />
+        </div>
+      );
     });
   }
 }

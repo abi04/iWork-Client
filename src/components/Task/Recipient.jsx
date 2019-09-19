@@ -1,7 +1,7 @@
 import React from 'react';
-import { TOGGLE_RECIPIENT_LIST } from './Mutations';
 import { Mutation, withApollo } from 'react-apollo';
-import { GET_ALL_USERS, GET_USER_FRAGMENT } from './Queries';
+import { TOGGLE_RECIPIENT_LIST } from './Mutations';
+import { GET_ALL_USERS } from './Queries';
 
 class Recipient extends React.PureComponent {
   render() {
@@ -19,7 +19,8 @@ class Recipient extends React.PureComponent {
           return (
             <div className="level">
               <div className="level-left" key={id}>
-                {firstName} {lastName}
+                {firstName}
+                {lastName}
               </div>
               <div className="level-right">
                 <label className="checkbox">

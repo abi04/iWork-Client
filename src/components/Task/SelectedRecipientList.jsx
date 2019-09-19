@@ -16,12 +16,15 @@ class SelectedRecipientList extends React.PureComponent {
             const { recipientList } = data;
 
             if (!recipientList || !recipientList.length) return <p>No items in your cart</p>;
-            if (recipientList || recipientList.length)
+            if (recipientList || recipientList.length) {
               return (
                 <div className="field is-grouped is-grouped-multiline">
                   <SelectedRecipients recipientList={recipientList} />
                 </div>
               );
+            }
+
+            return <>Not Available</>;
           }}
         </Query>
       </div>

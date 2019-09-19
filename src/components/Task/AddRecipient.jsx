@@ -1,12 +1,9 @@
 import React from 'react';
-import { Query, withApollo } from 'react-apollo';
+import { withApollo } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import GoBackButton from '../sharedComponent/GoBackButton';
-import { GET_ALL_USERS, GET_RECIPIENT_LIST, GET_ALL_USERS_BY_SEARCH_STRING } from './Queries';
-import Recipient from './Recipient';
-import SelectedRecipients from './SelectedRecipients';
-import SelectedRecipientList from './SelectedRecipientList';
 import RecipientList from './RecipientList';
+import SelectedRecipientList from './SelectedRecipientList';
 
 class AddRecipient extends React.PureComponent {
   constructor(props) {

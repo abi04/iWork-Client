@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
- 
-class Reviewer extends  React.PureComponent {
+class Reviewer extends React.PureComponent {
   render() {
     const { reviewer } = this.props;
     const { isReviewComplete } = reviewer;

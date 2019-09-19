@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Query } from 'react-apollo';
-import { GET_RECIPIENT_LIST } from './Queries';
 import JoinRecipientList from './JoinRecipientList';
 // import GoBackButton from '../sharedComponent/GoBackButton';
 
@@ -21,7 +19,7 @@ class CreateQuestion extends React.PureComponent {
               <div>Create Task</div>
               <div className="navbar-end">
                 <span className="panel-icon">
-                  <i className="fas fa-search" aria-hidden="true"></i>
+                  <i className="fas fa-search" aria-hidden="true" />
                 </span>
               </div>
             </div>
@@ -35,13 +33,13 @@ class CreateQuestion extends React.PureComponent {
 
           <div className="panel-block is-active">
             <span className="panel-icon">
-              <i className="fas fa-book" aria-hidden="true"></i>
+              <i className="fas fa-book" aria-hidden="true" />
             </span>
             bulma
           </div>
           <div className="panel-block">
             <span className="panel-icon">
-              <i className="fas fa-book" aria-hidden="true"></i>
+              <i className="fas fa-book" aria-hidden="true" />
             </span>
             marksheet
           </div>

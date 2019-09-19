@@ -5,8 +5,7 @@ import Options from './Options';
 import Buttons from './Buttons';
 import { NOTIFICATION_POSTS_QUERY } from '../Incomplete/Queries';
 
- 
-class Notifications extends  React.PureComponent {
+class Notifications extends React.PureComponent {
   render() {
     return (
       <Query query={NOTIFICATION_POSTS_QUERY}>
@@ -20,7 +19,7 @@ class Notifications extends  React.PureComponent {
             const { post, isReviewComplete } = notification;
             return (
               !isReviewComplete && (
-                <div className="box">
+                <div className="box" key={post.id}>
                   <div className="container">
                     <Content post={post} />
                   </div>

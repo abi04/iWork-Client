@@ -16,7 +16,7 @@ class JoinRecipientList extends React.PureComponent {
 
             if (!recipientList || !recipientList.length) return <p>Add Recipient</p>;
             if (recipientList && recipientList.length) {
-              let listoFSelectedRecipients = recipientList.map(recipient => {
+              const listoFSelectedRecipients = recipientList.map(recipient => {
                 const user = client.readFragment({
                   id: `User:${recipient}`,
                   fragment: GET_USER_FRAGMENT
@@ -27,6 +27,7 @@ class JoinRecipientList extends React.PureComponent {
 
               return listoFSelectedRecipients.join(', ');
             }
+            return <>Error</>;
           }}
         </Query>
       </div>

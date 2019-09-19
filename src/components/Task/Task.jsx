@@ -2,6 +2,7 @@ import React from 'react';
 
 class Task extends React.PureComponent {
   render() {
+    const { history } = this.props;
     return (
       <div className="panel">
         <article className="media">
@@ -12,7 +13,7 @@ class Task extends React.PureComponent {
               alt="Profile"
             />
           </figure>
-          <div className="media-content" onClick={() => this.props.history.push(`/create-task`)}>
+          <div className="media-content" onClick={() => history.push(`/create-task`)}>
             <div className="field">
               <p className="control">
                 <textarea

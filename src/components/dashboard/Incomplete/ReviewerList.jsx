@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Reviewer from './Reviewer';
 import AdditionalReviewer from './AdditionalReviewer';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class ReviewerList extends Component {
+ 
+class ReviewerList extends  React.PureComponent {
   render() {
     const { reviewers } = this.props;
     const numberOfReviewerPriview = 3;

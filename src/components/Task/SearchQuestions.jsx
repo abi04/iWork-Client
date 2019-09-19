@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GoBackButton from '../sharedComponent/GoBackButton';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class SearchQuestions extends Component {
+ 
+class SearchQuestions extends  React.PureComponent {
   render() {
     return (
       <div>

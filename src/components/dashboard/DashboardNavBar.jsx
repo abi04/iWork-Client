@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class DashboardNavBar extends Component {
+class DashboardNavBar extends React.PureComponent {
   render() {
     const { match } = this.props;
     return (
-      <div className="level">
-        <div className="level-item">
-          <div className="field">
+      <div className="tabs is-toggle is-toggle-rounded is-fullwidth">
+        <ul>
+          <li>
             <Link to={`${match.path}/incomplete`}> Incomplete </Link>
-          </div>
-        </div>
-        <div className="level-item">
-          <Link to={`${match.path}/notifications`}>Notifications </Link>
-        </div>
-        <div className="level-item">
-          <Link to={`${match.path}/history`}> History </Link>
-        </div>
+          </li>
+          <li>
+            <Link to={`${match.path}/notifications`}>Notifications </Link>
+          </li>
+          <li>
+            <Link to={`${match.path}/history`}> History </Link>
+          </li>
+        </ul>
       </div>
     );
   }

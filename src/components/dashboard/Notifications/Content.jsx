@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import moment from 'moment';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Content extends Component {
+ 
+class Content extends  React.PureComponent {
   render() {
     const {
       post: { question, createdAt, createdBy }

@@ -1,29 +1,18 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { createBrowserHistory } from 'history';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class GoBackButton extends Component {
+class GoBackButton extends React.PureComponent {
   render() {
-    const { history } = this.props;
+    // const { history } = this.props;
     return (
       <div>
-        <button
-          className="button is-dark"
-          type="button"
-          onClick={() => {
-            history.goBack();
-          }}
-        >
+        <Link to="/create-task">
+          <i className="fas fa-backward" />
           Go back
-        </button>
+        </Link>
       </div>
     );
   }
 }
-
-GoBackButton.propTypes = {
-  history: PropTypes.objectOf(createBrowserHistory).isRequired
-};
 
 export default GoBackButton;

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Buttons extends Component {
+ 
+class Buttons extends  React.PureComponent {
   render() {
     return (
       <div className="buttons">

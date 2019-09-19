@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Query } from 'react-apollo';
 import TaskNameAndTimeStamp from './TaskNameAndTimeStamp';
 import { INCOMPLETE_POSTS_QUERY } from './Queries';
@@ -6,8 +6,8 @@ import ReviewerList from './ReviewerList';
 import Options from './Options';
 import './incomplete.css';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class IncompleteRequest extends Component {
+ 
+class IncompleteRequest extends  React.PureComponent {
   // TODO: Add logic for no incomplete request
   render() {
     return (

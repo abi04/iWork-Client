@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Reviewer extends Component {
+ 
+class Reviewer extends  React.PureComponent {
   render() {
     const { reviewer } = this.props;
     const { isReviewComplete } = reviewer;

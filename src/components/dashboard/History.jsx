@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class History extends Component {
+ 
+class History extends  React.PureComponent {
   render() {
     return <div>History</div>;
   }

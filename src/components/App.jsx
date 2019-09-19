@@ -10,27 +10,29 @@ import 'bulma/css/bulma.css';
 import 'bulma-badge/dist/css/bulma-badge.min.css';
 import NotFound from './NotFound';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="columns">
-          <div className="column">Auto</div>
-          <div className="column">
-            <Switch>
-              <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
-              <Route path="/dashboard" component={Dashboard} />
-              <Route path="/create-task" component={CreateQuestion} />
-              <Route path="/create-task/add-recipient" component={AddRecipient} />
-              <Route path="/create-task/search-question" component={SearchQuestions} />
-              <Route component={NotFound} />
-            </Switch>
+class App extends React.PureComponent {
+  render() {
+    return (
+      <div className="App">
+        <div className="container">
+          <div className="columns">
+            <div className="column">Auto</div>
+            <div className="column">
+              <Switch>
+                <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route exact path="/create-task" component={CreateQuestion} />
+                <Route path="/create-task/add-recipient" component={AddRecipient} />
+                <Route path="/create-task/search-question" component={SearchQuestions} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+            <div className="column">Auto</div>
           </div>
-          <div className="column">Auto</div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

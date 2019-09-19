@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class AdditionalReviewer extends Component {
+ 
+class AdditionalReviewer extends  React.PureComponent {
   render() {
     const { number } = this.props;
     return (

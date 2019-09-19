@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 import moment from 'moment';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class TaskNameAndTimeStamp extends Component {
+ 
+class TaskNameAndTimeStamp extends  React.PureComponent {
   render() {
     const { question, createdAt } = this.props;
     const timeFromNow = moment(createdAt).fromNow();

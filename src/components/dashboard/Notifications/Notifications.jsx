@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Query } from 'react-apollo';
 import Content from './Content';
 import Options from './Options';
 import Buttons from './Buttons';
 import { NOTIFICATION_POSTS_QUERY } from '../Incomplete/Queries';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Notifications extends Component {
+ 
+class Notifications extends  React.PureComponent {
   render() {
     return (
       <Query query={NOTIFICATION_POSTS_QUERY}>

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Options extends Component {
+ 
+class Options extends  React.PureComponent {
   render() {
     return (
       <>

@@ -5,9 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
+import { typeDefs, resolvers } from './resolver';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import introspectionQueryResultData from './fragmentTypes.json';
+
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+});
+
+const cache = new InMemoryCache({ fragmentMatcher });
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:4000'
@@ -15,7 +23,16 @@ const httpLink = createHttpLink({
 
 const client = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache()
+  cache,
+  typeDefs,
+  resolvers,
+  connectToDevTools: true
+});
+
+cache.writeData({
+  data: {
+    recipientList: []
+  }
 });
 
 ReactDOM.render(

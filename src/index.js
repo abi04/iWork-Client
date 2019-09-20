@@ -31,8 +31,18 @@ const client = new ApolloClient({
 
 cache.writeData({
   data: {
+    question: '',
     recipientList: []
   }
+});
+
+client.onResetStore(() => {
+  cache.writeData({
+    data: {
+      question: '',
+      recipientList: []
+    }
+  });
 });
 
 ReactDOM.render(

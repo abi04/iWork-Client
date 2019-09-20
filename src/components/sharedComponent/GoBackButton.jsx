@@ -1,18 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { withApollo } from 'react-apollo';
 
 class GoBackButton extends React.PureComponent {
+  clearCacheAndGoBack = () => {
+    const { history, client } = this.props;
+    client.resetStore();
+    history.goBack();
+  };
+
   render() {
-    // const { history } = this.props;
     return (
       <div>
-        <Link to="/create-task">
-          <i className="fas fa-backward" />
-          Go back
-        </Link>
+        <i className="fas fa-backward" />
+        <span onClick={this.clearCacheAndGoBack}>Go back</span>
       </div>
     );
   }
 }
 
-export default GoBackButton;
+export default withApollo(withRouter(GoBackButton));

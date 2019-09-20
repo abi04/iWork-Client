@@ -6,3 +6,11 @@ export const TOGGLE_RECIPIENT_LIST = gql`
     addOrRemoveFromRecipientList(id: $userID) @client
   }
 `;
+
+export const CREATE_TASK = gql`
+  mutation CREATE_POST($input: PostInput!) {
+    createPost(input: $input) {
+      id
+    }
+  }
+`;

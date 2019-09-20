@@ -1,9 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import JoinRecipientList from './JoinRecipientList';
-// import GoBackButton from '../sharedComponent/GoBackButton';
+import SubmitTask from './SubmitTask';
+import AddQuestion from './AddQuestion';
+import GoBackButton from '../sharedComponent/GoBackButton';
 
 class CreateQuestion extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      question: ''
+    };
+  }
+
+  updateState = () => {
+    this.setState({ question: 'new Value' });
+  };
+
   render() {
     // const { history, match } = this.props;
 
@@ -14,9 +27,11 @@ class CreateQuestion extends React.PureComponent {
         <nav className="panel">
           <div className="panel-block">
             <div className="navbar-menu">
-              <div className="navbar-start">Go Back</div>
+              <div className="navbar-start">
+                <GoBackButton />
+              </div>
 
-              <div>Create Task</div>
+              <div>Create</div>
               <div className="navbar-end">
                 <span className="panel-icon">
                   <i className="fas fa-search" aria-hidden="true" />
@@ -31,17 +46,11 @@ class CreateQuestion extends React.PureComponent {
             </Link>
           </div>
 
-          <div className="panel-block is-active">
-            <span className="panel-icon">
-              <i className="fas fa-book" aria-hidden="true" />
-            </span>
-            bulma
+          <div className="panel-block">
+            <AddQuestion updateState={this.updateState} />
           </div>
           <div className="panel-block">
-            <span className="panel-icon">
-              <i className="fas fa-book" aria-hidden="true" />
-            </span>
-            marksheet
+            <SubmitTask />
           </div>
         </nav>
       </div>

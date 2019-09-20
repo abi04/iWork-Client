@@ -29,6 +29,13 @@ export const GET_RECIPIENT_LIST = gql`
   }
 `;
 
+export const GET_CACHE_DATA = gql`
+  query getCacheData {
+    question @client
+    recipientList @client
+  }
+`;
+
 export const GET_USER_FRAGMENT = gql`
   fragment user on User {
     id

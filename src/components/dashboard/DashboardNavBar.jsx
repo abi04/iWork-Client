@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class DashboardNavBar extends React.PureComponent {
   render() {
@@ -8,13 +8,19 @@ class DashboardNavBar extends React.PureComponent {
       <div className="tabs is-toggle is-toggle-rounded is-fullwidth">
         <ul>
           <li>
-            <Link to={`${match.path}/incomplete`}> Incomplete </Link>
+            <NavLink to={`${match.path}/incomplete`} activeClassName="is-active">
+              Incomplete
+            </NavLink>
           </li>
           <li>
-            <Link to={`${match.path}/notifications`}>Notifications </Link>
+            <NavLink to={`${match.path}/notifications`} activeClassName="is-active">
+              Notifications
+            </NavLink>
           </li>
           <li>
-            <Link to={`${match.path}/history`}> History </Link>
+            <NavLink to={`${match.path}/history`} activeClassName="is-active">
+              History
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -15,8 +15,16 @@ class Notifications extends React.PureComponent {
 
           const { getNotificationPostForUser } = data;
 
+          if (getNotificationPostForUser.length < 1) {
+            return (
+              <div className="container">
+                <div className="notification">Yayy, you are all caught up !!!!</div>
+              </div>
+            );
+          }
+
           return getNotificationPostForUser.map(notification => {
-            const { post, isReviewComplete } = notification;
+            const { post, isReviewComplete, id: reviewStatusId } = notification;
             return (
               !isReviewComplete && (
                 <div className="box" key={post.id}>
@@ -29,7 +37,7 @@ class Notifications extends React.PureComponent {
                       <Options />
                     </div>
                     <div className="level-right">
-                      <Buttons />
+                      <Buttons reviewStatusId={reviewStatusId} />
                     </div>
                   </div>
                 </div>

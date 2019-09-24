@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class Reviewer extends React.PureComponent {
   render() {
     const { reviewer } = this.props;
-    const { isReviewComplete } = reviewer;
-    const reviewStatus = isReviewComplete ? 'add-check-circle' : 'add-cross-circle';
+    const { isApproved } = reviewer;
+    const reviewStatus = isApproved ? 'add-check-circle' : 'add-cross-circle';
     return (
       <div className="level-item">
         <figure className={`image is-32x32 ${reviewStatus}`}>

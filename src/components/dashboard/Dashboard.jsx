@@ -6,8 +6,7 @@ import History from './History';
 import DashboardNavBar from './DashboardNavBar';
 import Task from '../Task';
 
- 
-class Dashboard extends  React.PureComponent {
+class Dashboard extends React.PureComponent {
   render() {
     const { match } = this.props;
     return (

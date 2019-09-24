@@ -19,7 +19,7 @@ class App extends React.PureComponent {
             <div className="column">Auto</div>
             <div className="column">
               <Switch>
-                <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+                <Route exact path="/" render={() => <Redirect to="/dashboard/incomplete" />} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route exact path="/create-task" component={CreateQuestion} />
                 <Route path="/create-task/add-recipient" component={AddRecipient} />

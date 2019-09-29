@@ -19,9 +19,7 @@ class PostList extends React.PureComponent {
             if (getPostsHistory.length < 1) {
               return (
                 <div className="container">
-                  <div className="notification">
-                    Either update the search or create a post to fetch history
-                  </div>
+                  <div className="notification"> No history Found !!!</div>
                 </div>
               );
             }

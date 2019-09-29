@@ -13,14 +13,14 @@ class ReviewerList extends React.PureComponent {
 
   render() {
     const { reviewers } = this.props;
-    const numberOfReviewerPriview = 3;
+    const numberOfPreview = 3;
     const additionalReviwer =
-      reviewers.length > numberOfReviewerPriview ? reviewers.length - numberOfReviewerPriview : 0;
+      reviewers.length > numberOfPreview ? reviewers.length - numberOfPreview : 0;
     return (
       <div className="level">
         {reviewers.map((reviewer, index) => {
-          if (index < numberOfReviewerPriview) return <Reviewer key={index} reviewer={reviewer} />;
-          if (index < numberOfReviewerPriview + 1)
+          if (index < numberOfPreview) return <Reviewer key={index} reviewer={reviewer} />;
+          if (index < numberOfPreview + 1)
             return <AdditionalReviewer key={index} number={additionalReviwer} />;
           return <div />;
         })}

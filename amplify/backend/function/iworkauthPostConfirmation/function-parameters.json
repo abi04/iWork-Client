@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "custom"
+    ],
+    "parentResource": "iworkauth",
+    "functionName": "iworkauthPostConfirmation",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerTemplate": "PostConfirmation.json.ejs",
+    "roleName": "iworkauthPostConfirmation",
+    "skipEdit": true,
+    "resourceName": "iworkauthPostConfirmation"
+}

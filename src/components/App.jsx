@@ -1,14 +1,19 @@
 import React from 'react';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react';
 import '../styles/App.css';
 import { Switch, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import CreateQuestion from './Task/CreateQuestion';
+import CreateQuestion from './AddTask/CreateQuestion';
 import Dashboard from './dashboard/Dashboard';
-import AddRecipient from './Task/AddRecipient';
-import SearchQuestions from './Task/SearchQuestions';
+import AddRecipient from './AddTask/AddRecipient';
+import SearchQuestions from './AddTask/SearchQuestions';
 import 'bulma/css/bulma.css';
-import 'bulma-badge/dist/css/bulma-badge.min.css';
 import NotFound from './NotFound';
+import awsconfig from '../aws-exports';
+import { signUpConfig } from './Auth/SignUpConfig';
+
+Amplify.configure(awsconfig);
 
 class App extends React.PureComponent {
   render() {
@@ -35,4 +40,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+export default withAuthenticator(App, { signUpConfig });

@@ -1,0 +1,26 @@
+type User @model @key(fields: ["username"]) {
+  firstName: String!
+  lastName: String!
+  username: String!
+  email: String!
+  profilePictureUrl: String
+  posts: [Post] @connection(name: "UserPost")
+  asReviewer: [ReviewerStatus] @connection(name: "UserReviewerStatus")
+}
+
+type ReviewerStatus @model {
+  id: ID!
+  reviewer: User! @connection(name: "UserReviewerStatus")
+  isApproved: Boolean!
+  isReviewComplete: Boolean!
+  post: Post! @connection(name: "PostReviewStatus")
+}
+
+type Post @model {
+  id: ID!
+  question: String!
+  isComplete: Boolean
+  createdBy: User! @connection(name: "UserPost")
+  reviewers: [ReviewerStatus!]! @connection(name: "PostReviewStatus")
+  createdAt: AWSDateTime!
+}

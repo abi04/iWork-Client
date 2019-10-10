@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 import { withApollo } from 'react-apollo';
-import { GET_RECIPIENT_LIST } from './components/Task/Queries';
+import { GET_RECIPIENT_LIST } from './components/AddTask/Queries';
 
 export const typeDefs = gql`
   extend type Query {
@@ -34,7 +34,7 @@ export const resolvers = {
           : [...recipientList, id]
       };
 
-      client.writeQuery({ query: GET_RECIPIENT_LIST, data });
+      cache.writeQuery({ query: GET_RECIPIENT_LIST, data });
       return data.recipientList;
     }
   }

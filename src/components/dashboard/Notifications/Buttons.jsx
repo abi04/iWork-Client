@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mutation } from 'react-apollo';
 import { REVIEW_NOTIFICATION } from './Mutation';
-import { NOTIFICATION_POSTS_QUERY } from '../Incomplete/Queries';
+import { NOTIFICATION_POSTS_QUERY } from '../Incomplete/Queries.js';
 
 class Buttons extends React.PureComponent {
   render() {

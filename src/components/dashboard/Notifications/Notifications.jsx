@@ -3,19 +3,21 @@ import { Query } from 'react-apollo';
 import Content from './Content';
 import Options from './Options';
 import Buttons from './Buttons';
-import { NOTIFICATION_POSTS_QUERY } from '../Incomplete/Queries';
+import { getUser } from '../../../graphql/queries';
 
 class Notifications extends React.PureComponent {
   render() {
     return (
-      <Query query={NOTIFICATION_POSTS_QUERY}>
+      <Query query={getUser}>
         {({ loading, error, data }) => {
           if (loading) return <div>Fetching...</div>;
           if (error) return <div>Some went wrong on ourside. Please try later</div>;
 
-          const { getNotificationPostForUser } = data;
+          const {
+            asReviewer: { items: notificationsForUser }
+          } = data.getUser;
 
-          if (getNotificationPostForUser.length < 1) {
+          if (notificationsForUser.length < 1) {
             return (
               <div className="container">
                 <div className="notification">Yayy, you are all caught up !!!!</div>
@@ -23,7 +25,7 @@ class Notifications extends React.PureComponent {
             );
           }
 
-          return getNotificationPostForUser.map(notification => {
+          return notificationsForUser.map(notification => {
             const { post, isReviewComplete, id: reviewStatusId } = notification;
             return (
               !isReviewComplete && (

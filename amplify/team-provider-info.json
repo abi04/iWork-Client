@@ -1,0 +1,22 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "iwork-frontend-dev-20190930190544-authRole",
+            "UnauthRoleArn": "arn:aws:iam::260103650602:role/iwork-frontend-dev-20190930190544-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::260103650602:role/iwork-frontend-dev-20190930190544-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "iwork-frontend-dev-20190930190544-deployment",
+            "UnauthRoleName": "iwork-frontend-dev-20190930190544-unauthRole",
+            "StackName": "iwork-frontend-dev-20190930190544",
+            "StackId": "arn:aws:cloudformation:us-east-1:260103650602:stack/iwork-frontend-dev-20190930190544/369fdf50-e3df-11e9-8118-0aad1b9980b2"
+        },
+        "categories": {
+            "function": {
+                "iworkauthPostConfirmation": {}
+            },
+            "auth": {
+                "iworkauth": {}
+            }
+        }
+    }
+}

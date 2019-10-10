@@ -2,9 +2,9 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import IncompleteRequest from './Incomplete';
 import Notifications from './Notifications/Notifications';
-import History from './History';
+import History from './History/History';
 import DashboardNavBar from './DashboardNavBar';
-import Task from '../Task';
+import Task from '../AddTask/Task';
 
 class Dashboard extends React.PureComponent {
   render() {

@@ -13,7 +13,7 @@ class Task extends React.PureComponent {
               alt="Profile"
             />
           </figure>
-          <div className="media-content" onClick={() => history.push(`/create-task`)}>
+          <div className="media-content" onClick={() => history.push('/create-task')}>
             <div className="field">
               <p className="control">
                 <textarea
